@@ -44,28 +44,38 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/crespo/overlay
 
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES := \
-	device/samsung/crespo/vold.fstab:system/etc/vold.fstab \
-	device/samsung/crespo/egl.cfg:system/lib/egl/egl.cfg
+	device/samsung/crespo/configs/vold.fstab:system/etc/vold.fstab \
+	device/samsung/crespo/configs/egl.cfg:system/lib/egl/egl.cfg
 
 # Init files
 PRODUCT_COPY_FILES += \
-	device/samsung/crespo/init.herring.rc:root/init.herring.rc \
-	device/samsung/crespo/init.herring.usb.rc:root/init.herring.usb.rc \
-	device/samsung/crespo/fstab.herring:root/fstab.herring \
-	device/samsung/crespo/ueventd.herring.rc:root/ueventd.herring.rc
+	device/samsung/crespo/ramdisk/init.herring.rc:root/init.herring.rc \
+	device/samsung/crespo/ramdisk/init.herring.usb.rc:root/init.herring.usb.rc \
+	device/samsung/crespo/ramdisk/fstab.herring:root/fstab.herring \
+	device/samsung/crespo/ramdisk/ueventd.herring.rc:root/ueventd.herring.rc
+
+# Basic props
+PRODUCT_PROPERTY_OVERRIDES += \
+	keyguard.no_require_sim=true \
+	ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+	ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
+	ro.com.google.clientidbase=android-google \
+	ro.com.android.wifi-watchlist=GoogleGuest \
+	ro.setupwizard.enterprise_mode=1 \
+	ro.com.android.dataroaming=false
 
 # Prebuilt kl and kcm keymaps
 PRODUCT_COPY_FILES += \
-	device/samsung/crespo/s3c-keypad.kl:system/usr/keylayout/s3c-keypad.kl \
-	device/samsung/crespo/s3c-keypad.kcm:system/usr/keychars/s3c-keypad.kcm \
-	device/samsung/crespo/herring-keypad.kl:system/usr/keylayout/herring-keypad.kl \
-	device/samsung/crespo/herring-keypad.kcm:system/usr/keychars/herring-keypad.kcm \
-	device/samsung/crespo/cypress-touchkey.kl:system/usr/keylayout/cypress-touchkey.kl \
-	device/samsung/crespo/cypress-touchkey.kcm:system/usr/keychars/cypress-touchkey.kcm \
-	device/samsung/crespo/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
-	device/samsung/crespo/sec_jack.kcm:system/usr/keychars/sec_jack.kcm \
-	device/samsung/crespo/mxt224_ts_input.kl:system/usr/keylayout/mxt224_ts_input.kl \
-	device/samsung/crespo/mxt224_ts_input.kcm:system/usr/keychars/mxt224_ts_input.kcm
+	device/samsung/crespo/input/s3c-keypad.kl:system/usr/keylayout/s3c-keypad.kl \
+	device/samsung/crespo/input/s3c-keypad.kcm:system/usr/keychars/s3c-keypad.kcm \
+	device/samsung/crespo/input/herring-keypad.kl:system/usr/keylayout/herring-keypad.kl \
+	device/samsung/crespo/input/herring-keypad.kcm:system/usr/keychars/herring-keypad.kcm \
+	device/samsung/crespo/input/cypress-touchkey.kl:system/usr/keylayout/cypress-touchkey.kl \
+	device/samsung/crespo/input/cypress-touchkey.kcm:system/usr/keychars/cypress-touchkey.kcm \
+	device/samsung/crespo/input/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
+	device/samsung/crespo/input/sec_jack.kcm:system/usr/keychars/sec_jack.kcm \
+	device/samsung/crespo/input/mxt224_ts_input.kl:system/usr/keylayout/mxt224_ts_input.kl \
+	device/samsung/crespo/input/mxt224_ts_input.kcm:system/usr/keychars/mxt224_ts_input.kcm
 
 #NVRAM setup
 PRODUCT_COPY_FILES += \
@@ -169,7 +179,7 @@ PRODUCT_PACKAGES += \
 
 # Input device calibration files
 PRODUCT_COPY_FILES += \
-	device/samsung/crespo/mxt224_ts_input.idc:system/usr/idc/mxt224_ts_input.idc
+	device/samsung/crespo/input/mxt224_ts_input.idc:system/usr/idc/mxt224_ts_input.idc
 
 # Device app
 PRODUCT_PACKAGES += \
