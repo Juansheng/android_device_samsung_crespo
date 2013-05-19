@@ -22,13 +22,6 @@
 # Get the long list of APNs
 PRODUCT_COPY_FILES := device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-        LiveWallpapers \
-        LiveWallpapersPicker \
-        VisualizationWallpapers \
-        librs_jni
-
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # This is where we'd set a backup provider if we had one
@@ -38,5 +31,6 @@ $(call inherit-product, device/samsung/crespo/device.mk)
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := full_crespo
 PRODUCT_DEVICE := crespo
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := Full Android on Crespo
+PRODUCT_BRAND := Google
+PRODUCT_MODEL := Nexus S
+PRODUCT_MANUFACTURE := Samsung
