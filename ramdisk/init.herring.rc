@@ -8,6 +8,10 @@ on boot
     setprop ro.radio.noril yes
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
 
+    # Flash storage isn't a good entropy source, and only causes locking
+    # overhead in the kernel. Turn it off.
+    write /sys/block/mmcblk0/queue/add_random 0
+
 # fake some battery state
     setprop status.battery.state Slow
     setprop status.battery.level 5
