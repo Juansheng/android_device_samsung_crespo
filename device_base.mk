@@ -49,6 +49,7 @@ PRODUCT_COPY_FILES := \
 
 # Init files
 PRODUCT_COPY_FILES += \
+	device/samsung/crespo/ramdisk/init.local.rc:root/init.local.rc \
 	device/samsung/crespo/ramdisk/init.herring.rc:root/init.herring.rc \
 	device/samsung/crespo/ramdisk/init.herring.usb.rc:root/init.herring.usb.rc \
 	device/samsung/crespo/ramdisk/fstab.herring:root/fstab.herring \
