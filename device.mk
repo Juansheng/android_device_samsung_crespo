@@ -45,6 +45,7 @@ PRODUCT_COPY_FILES += \
         device/samsung/crespo/prebuilt/flash_image:system/bin/flash_image \
         device/samsung/crespo/prebuilt/sysinit:system/bin/sysinit \
 	device/samsung/crespo/prebuilt/backuptool.sh:system/bin/backuptool.sh \
+	device/samsung/crespo/prebuilt/bootanimation.zip:system/media/bootanimation.zip \
 	device/samsung/crespo/prebuilt/init.d/90userinit:system/etc/init.d/90userinit
 
 # GPS config
