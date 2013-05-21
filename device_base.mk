@@ -148,11 +148,7 @@ PRODUCT_PACKAGES += \
 	lights.s5pc110 \
 	hwcomposer.s5pc110 \
 	sensors.herring \
-    power.s5pc110
-
-# Torch
-PRODUCT_PACKAGES += \
-    Torch
+	power.s5pc110
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -182,10 +178,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 	device/samsung/crespo/input/mxt224_ts_input.idc:system/usr/idc/mxt224_ts_input.idc
 
-# Device app
-PRODUCT_PACKAGES += \
-        CrespoParts
-
 # for bugmailer
 PRODUCT_PACKAGES += send_bug
 PRODUCT_COPY_FILES += \
@@ -211,7 +203,7 @@ PRODUCT_COPY_FILES += \
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
 PRODUCT_PROPERTY_OVERRIDES := \
-    ro.opengles.version=131072
+	ro.opengles.version=131072
 
 # These are the hardware-specific settings that are stored in system properties.
 # Note that the only such settings should be the ones that are too low-level to
