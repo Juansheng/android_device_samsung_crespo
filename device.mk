@@ -41,7 +41,6 @@ PRODUCT_COPY_FILES := \
 # Prebuilt stuff
 PRODUCT_COPY_FILES += \
         device/samsung/crespo/prebuilt/zImage:kernel \
-        device/samsung/crespo/prebuilt/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
         device/samsung/crespo/prebuilt/flash_image:system/bin/flash_image \
         device/samsung/crespo/prebuilt/sysinit:system/bin/sysinit \
 	device/samsung/crespo/prebuilt/backuptool.sh:system/bin/backuptool.sh \
