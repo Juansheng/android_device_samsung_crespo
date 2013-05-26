@@ -203,7 +203,7 @@ PRODUCT_COPY_FILES += \
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=131072
 
 # These are the hardware-specific settings that are stored in system properties.
