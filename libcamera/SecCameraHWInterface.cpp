@@ -1731,7 +1731,7 @@ status_t CameraHardwareSec::setParameters(const CameraParameters& params)
     }
 
     // brightness
-    int new_exposure_compensation = params.getInt(CameraParameters::KEY_EXPOSURE_COMPENSATION);
+    int new_exposure_compensation = params.getInt(CameraParameters::KEY_EXPOSURE_COMPENSATION) - 1;
     int max_exposure_compensation = params.getInt(CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION);
     int min_exposure_compensation = params.getInt(CameraParameters::KEY_MIN_EXPOSURE_COMPENSATION);
     ALOGV("%s : new_exposure_compensation %d", __func__, new_exposure_compensation);
