@@ -17,10 +17,6 @@
 # Product-specific compile-time definitions.
 #
 
-# Boot Animation
-TARGET_SCREEN_HEIGHT := 800
-TARGET_SCREEN_WIDTH := 480
-
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 
