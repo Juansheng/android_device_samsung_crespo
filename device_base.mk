@@ -44,7 +44,6 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/crespo/overlay
 
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES := \
-	device/samsung/crespo/configs/vold.fstab:system/etc/vold.fstab \
 	device/samsung/crespo/configs/egl.cfg:system/lib/egl/egl.cfg
 
 # Init files
