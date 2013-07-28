@@ -5,7 +5,6 @@ on boot
 
     setprop ro.build.product herring
     setprop ro.product.device herring
-    setprop ro.radio.noril yes
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
 
     # Flash storage isn't a good entropy source, and only causes locking
