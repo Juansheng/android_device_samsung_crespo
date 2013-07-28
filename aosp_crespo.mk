@@ -29,7 +29,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/samsung/crespo/device.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := full_crespo
+PRODUCT_NAME := aosp_crespo
 PRODUCT_DEVICE := crespo
 PRODUCT_BRAND := Google
 PRODUCT_MODEL := Nexus S
