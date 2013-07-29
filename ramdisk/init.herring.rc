@@ -1,4 +1,5 @@
 import init.herring.usb.rc
+import init.superuser.rc
 
 on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug
