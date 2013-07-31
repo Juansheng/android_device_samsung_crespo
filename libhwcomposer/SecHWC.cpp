@@ -25,6 +25,7 @@
 
 #define HWC_REMOVE_DEPRECATED_VERSIONS 1
 
+#include <utils/threads.h>
 #include <sys/resource.h>
 #include <cutils/log.h>
 #include <cutils/atomic.h>
@@ -554,7 +555,8 @@ static void *hwc_vsync_thread(void *data)
     memset(uevent_desc, 0, sizeof(uevent_desc));
 #endif
 
-    setpriority(PRIO_PROCESS, 0, HAL_PRIORITY_URGENT_DISPLAY);
+    setpriority(PRIO_PROCESS, 0, HAL_PRIORITY_URGENT_DISPLAY +
+                android::PRIORITY_MORE_FAVORABLE);
 
 #ifndef VSYNC_IOCTL
     uevent_init();
