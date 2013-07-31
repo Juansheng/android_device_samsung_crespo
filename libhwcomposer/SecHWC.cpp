@@ -511,7 +511,7 @@ static int hwc_eventControl(struct hwc_composer_device_1* dev, int dpy,
         pthread_mutex_lock(&vsync_mutex);
         if(enabled) {
             vsync_enable = 1;
-            pthread_cond_broadcast(&vsync_condition);
+            pthread_cond_signal(&vsync_condition);
         }
         else vsync_enable = 0;
         pthread_mutex_unlock(&vsync_mutex);
