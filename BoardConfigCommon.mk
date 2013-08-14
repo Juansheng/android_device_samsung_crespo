@@ -40,6 +40,9 @@ TARGET_SEC_INTERNAL_STORAGE := false
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 
+# low memory
+TARGET_ARCH_LOWMEM := true
+
 #BOARD_USES_HGL := true
 #BOARD_USES_OVERLAY := true
 BOARD_USES_GENERIC_AUDIO := false
