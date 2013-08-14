@@ -110,9 +110,12 @@ static int get_scaling_governor() {
 
 static void s5pc110_power_set_interactive(struct power_module *module, int on)
 {
-    if (strncmp(governor, "interactive", 11) == 0)
+    if (strncmp(governor, "interactive", 11) == 0) {
         sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/timer_rate",
                 on ? TIMER_RATE_SCREEN_ON : TIMER_RATE_SCREEN_OFF);
+        sysfs_write("/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq",
+                on ? "200000" : "100000");
+    }
 }
 
 static void configure_governor()
