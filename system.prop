@@ -15,3 +15,6 @@ ro.sys.fw.bg_apps_limit=8
 # Disable system restrictions
 persist.sys.strictmode.visual=0
 persist.sys.strictmode.disable=1
+
+# Default root access
+persist.sys.root_access=1
