@@ -161,7 +161,7 @@ void CameraHardwareSec::initDefaultParameters(int cameraId)
         p.set(CameraParameters::KEY_SUPPORTED_PREVIEW_SIZES,
               "640x480,320x240,176x144");
         p.set(CameraParameters::KEY_SUPPORTED_PICTURE_SIZES,
-              "640x480");
+              "640x480,320x240");
     }
 
     p.getSupportedPreviewSizes(mSupportedPreviewSizes);
