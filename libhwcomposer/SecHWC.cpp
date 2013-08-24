@@ -26,9 +26,11 @@
 #define HWC_REMOVE_DEPRECATED_VERSIONS 1
 
 #include <utils/threads.h>
+#include <utils/Timers.h>
 #include <sys/resource.h>
 #include <cutils/log.h>
 #include <cutils/atomic.h>
+#include <cutils/properties.h>
 #include <EGL/egl.h>
 #include <GLES/gl.h>
 #include <hardware_legacy/uevent.h>
@@ -54,6 +56,30 @@ hwc_module_t HAL_MODULE_INFO_SYM = {
         methods: &hwc_module_methods,
     }
 };
+
+static void showfps(void)
+{
+    static int framecount = 0;
+    static int lastframecount = 0;
+    static nsecs_t lastfpstime = 0;
+    static float fps = 0;
+    char value[PROPERTY_VALUE_MAX];
+
+    property_get("debug.hwc.showfps", value, "0");
+    if (!atoi(value)) {
+        return;
+    }
+
+    framecount++;
+    if (!(framecount & 0x7)) {
+        nsecs_t now = systemTime(SYSTEM_TIME_MONOTONIC);
+        nsecs_t diff = now - lastfpstime;
+        fps = ((framecount - lastframecount) * (float)(s2ns(1))) / diff;
+        lastfpstime = now;
+        lastframecount = framecount;
+        ALOGI("%d Frames, %f FPS", framecount, fps);
+    }
+}
 
 static void dump_layer(hwc_layer_1_t const* l) {
     ALOGD("\ttype=%d, flags=%08x, handle=%p, tr=%02x, blend=%04x, {%d,%d,%d,%d}, {%d,%d,%d,%d}",
@@ -434,6 +460,8 @@ static int hwc_set(hwc_composer_device_1_t *dev,
                 window_hide(&ctx->win[i]);
         }
     }
+
+    showfps();
 
     return 0;
 }
