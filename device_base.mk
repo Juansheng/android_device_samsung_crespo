@@ -53,6 +53,10 @@ PRODUCT_COPY_FILES += \
 	device/samsung/crespo/ramdisk/fstab.herring:root/fstab.herring \
 	device/samsung/crespo/ramdisk/ueventd.herring.rc:root/ueventd.herring.rc
 
+# Copy Superuser init to root for non embedded device
+PRODUCT_COPY_FILES += \
+	external/koush/Superuser/init.superuser.rc:root/init.superuser.rc
+
 # Basic props
 PRODUCT_PROPERTY_OVERRIDES += \
 	keyguard.no_require_sim=true \
