@@ -20,7 +20,7 @@
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 
-TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT := cortex-a8
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
@@ -90,6 +90,8 @@ USE_OPENGL_RENDERER	:= true
 # OpenGL ES driver that in conjunction with disable triple-buffering
 # would hurt performance significantly (see b/6016711)
 TARGET_DISABLE_TRIPLE_BUFFERING := false
+
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
 BOARD_ALLOW_EGL_HIBERNATION := true
 
