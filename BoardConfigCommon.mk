@@ -39,9 +39,7 @@ TARGET_SEC_INTERNAL_STORAGE := false
 # Enable NEON feature
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
-
-# low memory
-TARGET_ARCH_LOWMEM := true
+TARGET_ARCH_HAVE_NEON := true
 
 #BOARD_USES_HGL := true
 #BOARD_USES_OVERLAY := true
