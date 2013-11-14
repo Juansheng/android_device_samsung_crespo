@@ -156,7 +156,8 @@ PRODUCT_PACKAGES += \
 	hwcomposer.s5pc110 \
 	sensors.herring \
 	power.s5pc110 \
-	libs3cjpeg
+	libs3cjpeg \
+	libemoji
 
 # Camera
 PRODUCT_PACKAGES += \
