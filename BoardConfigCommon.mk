@@ -100,6 +100,9 @@ MAX_EGL_CACHE_KEY_SIZE := 4096
 # hwcomposer: custom vsync ioctl
 BOARD_CUSTOM_VSYNC_IOCTL := true
 
+# Screen record
+BOARD_SCREENRECORD_LANDSCAPE_ONLY := true
+
 # No SDK blobs
 BUILD_EMULATOR_SENSORS_MODULE := false
 BUILD_EMULATOR_GPS_MODULE := false
